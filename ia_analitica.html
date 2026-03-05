@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinPlanner - IA y Analítica</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-project-diagram"></i>
+            </div>
+            <h4 class="sidebar-brand">WinPlanner</h4>
+        </div>
+        
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="sidebar-item">
+                <i class="fas fa-th-large"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="gestion_proyectos.html" class="sidebar-item">
+                <i class="fas fa-folder-open"></i>
+                <span>Gestión de Proyectos</span>
+            </a>
+            <a href="planeacion_control.html" class="sidebar-item">
+                <i class="fas fa-tasks"></i>
+                <span>Planeación y Control</span>
+            </a>
+            <a href="colaboracion.html" class="sidebar-item">
+                <i class="fas fa-comments"></i>
+                <span>Colaboración</span>
+            </a>
+            <a href="ia_analitica.html" class="sidebar-item active">
+                <i class="fas fa-brain"></i>
+                <span>IA y Analítica</span>
+            </a>
+            
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-section-title">Configuración</div>
+            
+            <a href="#" class="sidebar-item">
+                <i class="fas fa-cog"></i>
+                <span>Ajustes</span>
+            </a>
+            <a href="#" class="sidebar-item">
+                <i class="fas fa-user-circle"></i>
+                <span>Perfil</span>
+            </a>
+            <a href="index.html" class="sidebar-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div>
+                <h2 class="page-title">IA y Analítica</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="dashboard.html">Inicio</a></li>
+                        <li class="breadcrumb-item active">IA y Analítica</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        
+        <div class="topbar-right">
+            <div class="topbar-icon">
+                <i class="fas fa-sync-alt"></i>
+            </div>
+            <div class="topbar-icon">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">2</span>
+            </div>
+            <div class="user-profile">
+                <div class="user-avatar">JD</div>
+                <div class="user-info">
+                    <p class="user-name">Juan Díaz</p>
+                    <p class="user-role">Administrador</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        <div class="container-fluid">
+            <!-- Alerta de IA -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="alert alert-primary d-flex align-items-center slide-in-left" role="alert">
+                        <i class="fas fa-robot fa-2x me-3"></i>
+                        <div>
+                            <h5 class="alert-heading mb-1">Asistente de IA Activo</h5>
+                            <p class="mb-0">El sistema está analizando tus proyectos en tiempo real para proporcionar recomendaciones personalizadas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjetas de Análisis -->
+            <div class="row g-4 mb-4">
+                <div class="col-lg-4">
+                    <div class="card analysis-card slide-in-left">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-shield-alt text-primary me-2"></i>
+                                Nivel de Riesgo
+                            </h5>
+                            <span class="badge bg-warning">MEDIO</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="risk-indicator">
+                                <div class="risk-level medium">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div>
+                                    <h3 class="mb-1">5 Proyectos</h3>
+                                    <p class="text-muted mb-0">requieren atención inmediata</p>
+                                    <small class="text-warning">
+                                        <i class="fas fa-arrow-up"></i>
+                                        2 más que la semana pasada
+                                    </small>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-center">
+                                    <h4 class="text-success mb-0">19</h4>
+                                    <small class="text-muted">Bajo Riesgo</small>
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="text-warning mb-0">5</h4>
+                                    <small class="text-muted">Medio Riesgo</small>
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="text-danger mb-0">2</h4>
+                                    <small class="text-muted">Alto Riesgo</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card analysis-card slide-in-left" style="animation-delay: 0.1s;">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-chart-line text-primary me-2"></i>
+                                Progreso General
+                            </h5>
+                            <span class="badge bg-success">+12%</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <div class="position-relative d-inline-block">
+                                    <canvas id="progressGauge" width="150" height="150"></canvas>
+                                    <div class="position-absolute top-50 start-50 translate-middle text-center">
+                                        <h2 class="mb-0">68%</h2>
+                                        <small class="text-muted">Completado</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <small class="text-muted">Meta del mes</small>
+                                    <h5 class="mb-0">85%</h5>
+                                </div>
+                                <div class="text-end">
+                                    <small class="text-muted">Proyectos activos</small>
+                                    <h5 class="mb-0">24</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card analysis-card slide-in-left" style="animation-delay: 0.2s;">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-tachometer-alt text-primary me-2"></i>
+                                Eficiencia del Equipo
+                            </h5>
+                            <span class="badge bg-primary">92%</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>Productividad</small>
+                                    <small class="text-primary">92%</small>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>Cumplimiento de plazos</small>
+                                    <small class="text-success">88%</small>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-success" style="width: 88%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>Calidad de entregables</small>
+                                    <small class="text-info">95%</small>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-info" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small>Satisfacción del cliente</small>
+                                    <small class="text-warning">85%</small>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-warning" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráficas de Análisis -->
+            <div class="row g-4 mb-4">
+                <div class="col-lg-8">
+                    <div class="card slide-in-left" style="animation-delay: 0.3s;">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-chart-area text-primary me-2"></i>
+                                Tendencia de Rendimiento
+                            </h5>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                    Últimos 6 meses
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Último mes</a></li>
+                                    <li><a class="dropdown-item" href="#">Últimos 3 meses</a></li>
+                                    <li><a class="dropdown-item" href="#">Últimos 6 meses</a></li>
+                                    <li><a class="dropdown-item" href="#">Este año</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container-lg">
+                                <canvas id="performanceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card slide-in-left" style="animation-delay: 0.4s;">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-lightbulb text-primary me-2"></i>
+                                Insights de IA
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="recommendation-item">
+                                <div class="recommendation-icon">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div class="recommendation-text">
+                                    <h6 class="recommendation-title">Proyecto en riesgo detectado</h6>
+                                    <p class="recommendation-desc">"Migración de Base de Datos" está 15% por debajo del cronograma.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="recommendation-item">
+                                <div class="recommendation-icon" style="background: #10B981;">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="recommendation-text">
+                                    <h6 class="recommendation-title">Sobrecarga de trabajo</h6>
+                                    <p class="recommendation-desc">Carlos López tiene 8 tareas pendientes. Considere redistribuir.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="recommendation-item">
+                                <div class="recommendation-icon" style="background: #8B5CF6;">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="recommendation-text">
+                                    <h6 class="recommendation-title">Plazo próximo a vencer</h6>
+                                    <p class="recommendation-desc">3 tareas vencen esta semana. Priorice su completitud.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="recommendation-item mb-0">
+                                <div class="recommendation-icon" style="background: #F59E0B;">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <div class="recommendation-text">
+                                    <h6 class="recommendation-title">Oportunidad de mejora</h6>
+                                    <p class="recommendation-desc">El equipo de QA tiene capacidad para 20% más de trabajo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recomendaciones del Sistema -->
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="card slide-in-left" style="animation-delay: 0.5s;">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-magic text-primary me-2"></i>
+                                Recomendaciones del Sistema
+                            </h5>
+                            <span class="badge bg-primary">Powered by AI</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="metric-icon blue me-3" style="width: 50px; height: 50px;">
+                                            <i class="fas fa-tasks"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-2">Optimización de Recursos</h6>
+                                            <p class="text-muted mb-2">Basado en el análisis de carga de trabajo, se recomienda reasignar 3 tareas del equipo de Desarrollo al equipo de QA para balancear la carga.</p>
+                                            <button class="btn btn-sm btn-outline-primary">Aplicar cambios</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="metric-icon green me-3" style="width: 50px; height: 50px;">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-2">Mejora de Tiempos</h6>
+                                            <p class="text-muted mb-2">Los proyectos de tipo "Desarrollo Web" están tardando un 25% más de lo estimado. Considere ajustar las estimaciones futuras.</p>
+                                            <button class="btn btn-sm btn-outline-success">Ver detalles</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="metric-icon purple me-3" style="width: 50px; height: 50px;">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-2">Formación del Equipo</h6>
+                                            <p class="text-muted mb-2">El 40% de los retrasos se deben a falta de conocimiento en tecnologías cloud. Se recomienda capacitación en AWS.</p>
+                                            <button class="btn btn-sm btn-outline-primary">Programar capacitación</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Predicciones -->
+            <div class="row g-4 mt-2">
+                <div class="col-12">
+                    <div class="card slide-in-left" style="animation-delay: 0.6s;">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-crystal-ball text-primary me-2"></i>
+                                Predicciones y Forecast
+                            </h5>
+                            <small class="text-muted">Basado en datos históricos y machine learning</small>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <div class="col-md-3 text-center">
+                                    <div class="p-4 bg-light rounded">
+                                        <i class="fas fa-calendar-alt fa-3x text-primary mb-3"></i>
+                                        <h4 class="mb-1">15 Abr</h4>
+                                        <p class="text-muted mb-0">Fecha estimada de finalización del proyecto E-commerce</p>
+                                        <small class="text-success">
+                                            <i class="fas fa-check-circle"></i>
+                                            85% de confianza
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3 text-center">
+                                    <div class="p-4 bg-light rounded">
+                                        <i class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
+                                        <h4 class="mb-1">3 Proyectos</h4>
+                                        <p class="text-muted mb-0">Podrían retrasarse si no se toman acciones correctivas</p>
+                                        <small class="text-warning">
+                                            <i class="fas fa-bell"></i>
+                                            Alerta media
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3 text-center">
+                                    <div class="p-4 bg-light rounded">
+                                        <i class="fas fa-dollar-sign fa-3x text-success mb-3"></i>
+                                        <h4 class="mb-1">$45,000</h4>
+                                        <p class="text-muted mb-0">Ahorro estimado con optimización de recursos</p>
+                                        <small class="text-success">
+                                            <i class="fas fa-arrow-up"></i>
+                                            +12% vs mes anterior
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3 text-center">
+                                    <div class="p-4 bg-light rounded">
+                                        <i class="fas fa-rocket fa-3x text-purple mb-3" style="color: #8B5CF6;"></i>
+                                        <h4 class="mb-1">32</h4>
+                                        <p class="text-muted mb-0">Proyectos que se pueden iniciar con capacidad actual</p>
+                                        <small class="text-primary">
+                                            <i class="fas fa-info-circle"></i>
+                                            Capacidad óptima
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Toggle Sidebar en móvil
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('show');
+        });
+
+        // Gráfica de Tendencia de Rendimiento
+        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(performanceCtx, {
+            type: 'line',
+            data: {
+                labels: ['Oct', 'Nov', 'Dic', 'Ene', 'Feb', 'Mar'],
+                datasets: [{
+                    label: 'Eficiencia del Equipo',
+                    data: [78, 82, 85, 88, 90, 92],
+                    borderColor: '#2563EB',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#2563EB',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8
+                }, {
+                    label: 'Meta Objetivo',
+                    data: [85, 85, 85, 90, 90, 95],
+                    borderColor: '#10B981',
+                    backgroundColor: 'transparent',
+                    borderWidth: 2,
+                    borderDash: [5, 5],
+                    fill: false,
+                    tension: 0.4,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 20
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 60,
+                        max: 100,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // Gauge de Progreso
+        const gaugeCtx = document.getElementById('progressGauge').getContext('2d');
+        new Chart(gaugeCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Completado', 'Pendiente'],
+                datasets: [{
+                    data: [68, 32],
+                    backgroundColor: [
+                        '#2563EB',
+                        '#E2E8F0'
+                    ],
+                    borderWidth: 0,
+                    cutout: '75%'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: false
+                    }
+                },
+                rotation: -90,
+                circumference: 180
+            }
+        });
+    </script>
+</body>
+</html>

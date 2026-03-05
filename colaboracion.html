@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinPlanner - Colaboración</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-project-diagram"></i>
+            </div>
+            <h4 class="sidebar-brand">WinPlanner</h4>
+        </div>
+        
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="sidebar-item">
+                <i class="fas fa-th-large"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="gestion_proyectos.html" class="sidebar-item">
+                <i class="fas fa-folder-open"></i>
+                <span>Gestión de Proyectos</span>
+            </a>
+            <a href="planeacion_control.html" class="sidebar-item">
+                <i class="fas fa-tasks"></i>
+                <span>Planeación y Control</span>
+            </a>
+            <a href="colaboracion.html" class="sidebar-item active">
+                <i class="fas fa-comments"></i>
+                <span>Colaboración</span>
+            </a>
+            <a href="ia_analitica.html" class="sidebar-item">
+                <i class="fas fa-brain"></i>
+                <span>IA y Analítica</span>
+            </a>
+            
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-section-title">Configuración</div>
+            
+            <a href="#" class="sidebar-item">
+                <i class="fas fa-cog"></i>
+                <span>Ajustes</span>
+            </a>
+            <a href="#" class="sidebar-item">
+                <i class="fas fa-user-circle"></i>
+                <span>Perfil</span>
+            </a>
+            <a href="index.html" class="sidebar-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div>
+                <h2 class="page-title">Colaboración</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="dashboard.html">Inicio</a></li>
+                        <li class="breadcrumb-item active">Colaboración</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        
+        <div class="topbar-right">
+            <div class="topbar-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="topbar-icon">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">5</span>
+            </div>
+            <div class="user-profile">
+                <div class="user-avatar">JD</div>
+                <div class="user-info">
+                    <p class="user-name">Juan Díaz</p>
+                    <p class="user-role">Administrador</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        <div class="container-fluid">
+            <div class="row g-4">
+                <!-- Lista de Conversaciones -->
+                <div class="col-lg-4">
+                    <div class="card slide-in-left">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-comments text-primary me-2"></i>
+                                Conversaciones
+                            </h5>
+                            <button class="btn btn-sm btn-primary">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="list-group list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action active p-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="position-relative">
+                                            <div class="chat-avatar" style="width: 50px; height: 50px;">GE</div>
+                                            <span class="position-absolute bottom-0 end-0 bg-success rounded-circle" style="width: 12px; height: 12px; border: 2px solid white;"></span>
+                                        </div>
+                                        <div class="ms-3 flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h6 class="mb-0">Equipo General</h6>
+                                                <small class="text-white-50">10:30</small>
+                                            </div>
+                                            <p class="mb-0 text-white-50 text-truncate" style="max-width: 180px;">María: Perfecto, gracias por la actualización...</p>
+                                        </div>
+                                        <span class="badge bg-danger rounded-pill ms-2">3</span>
+                                    </div>
+                                </a>
+                                
+                                <a href="#" class="list-group-item list-group-item-action p-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="position-relative">
+                                            <div class="chat-avatar" style="width: 50px; height: 50px; background: linear-gradient(135deg, #10B981 0%, #059669 100%);">DW</div>
+                                            <span class="position-absolute bottom-0 end-0 bg-success rounded-circle" style="width: 12px; height: 12px; border: 2px solid white;"></span>
+                                        </div>
+                                        <div class="ms-3 flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h6 class="mb-0">Desarrollo Web</h6>
+                                                <small class="text-muted">Ayer</small>
+                                            </div>
+                                            <p class="mb-0 text-muted text-truncate" style="max-width: 180px;">Carlos: Ya terminé los mockups...</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <a href="#" class="list-group-item list-group-item-action p-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="position-relative">
+                                            <div class="chat-avatar" style="width: 50px; height: 50px; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);">MA</div>
+                                            <span class="position-absolute bottom-0 end-0 bg-secondary rounded-circle" style="width: 12px; height: 12px; border: 2px solid white;"></span>
+                                        </div>
+                                        <div class="ms-3 flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h6 class="mb-0">Marketing Digital</h6>
+                                                <small class="text-muted">Lun</small>
+                                            </div>
+                                            <p class="mb-0 text-muted text-truncate" style="max-width: 180px;">Ana: Revisen el calendario de publicaciones</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <a href="#" class="list-group-item list-group-item-action p-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="position-relative">
+                                            <div class="chat-avatar" style="width: 50px; height: 50px; background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);">MG</div>
+                                            <span class="position-absolute bottom-0 end-0 bg-success rounded-circle" style="width: 12px; height: 12px; border: 2px solid white;"></span>
+                                        </div>
+                                        <div class="ms-3 flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h6 class="mb-0">María García</h6>
+                                                <small class="text-muted">Dom</small>
+                                            </div>
+                                            <p class="mb-0 text-muted text-truncate" style="max-width: 180px;">¿Podemos reunirnos mañana?</p>
+                                        </div>
+                                        <span class="badge bg-primary rounded-pill ms-2">1</span>
+                                    </div>
+                                </a>
+                                
+                                <a href="#" class="list-group-item list-group-item-action p-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="position-relative">
+                                            <div class="chat-avatar" style="width: 50px; height: 50px; background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);">CL</div>
+                                            <span class="position-absolute bottom-0 end-0 bg-secondary rounded-circle" style="width: 12px; height: 12px; border: 2px solid white;"></span>
+                                        </div>
+                                        <div class="ms-3 flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h6 class="mb-0">Carlos López</h6>
+                                                <small class="text-muted">Hace 2 días</small>
+                                            </div>
+                                            <p class="mb-0 text-muted text-truncate" style="max-width: 180px;">Te envío el reporte semanal</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Miembros del Equipo -->
+                    <div class="card mt-4 slide-in-left" style="animation-delay: 0.1s;">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-users text-primary me-2"></i>
+                                Miembros del Equipo
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="chat-avatar" style="width: 40px; height: 40px;">JD</div>
+                                <div class="ms-3 flex-grow-1">
+                                    <h6 class="mb-0">Juan Díaz</h6>
+                                    <small class="text-muted">Desarrollador Full Stack</small>
+                                </div>
+                                <span class="badge bg-success">En línea</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="chat-avatar" style="width: 40px; height: 40px; background: linear-gradient(135deg, #10B981 0%, #059669 100%);">MG</div>
+                                <div class="ms-3 flex-grow-1">
+                                    <h6 class="mb-0">María García</h6>
+                                    <small class="text-muted">Diseñadora UX/UI</small>
+                                </div>
+                                <span class="badge bg-success">En línea</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="chat-avatar" style="width: 40px; height: 40px; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);">CL</div>
+                                <div class="ms-3 flex-grow-1">
+                                    <h6 class="mb-0">Carlos López</h6>
+                                    <small class="text-muted">DevOps Engineer</small>
+                                </div>
+                                <span class="badge bg-secondary">Desconectado</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="chat-avatar" style="width: 40px; height: 40px; background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);">AR</div>
+                                <div class="ms-3 flex-grow-1">
+                                    <h6 class="mb-0">Ana Rodríguez</h6>
+                                    <small class="text-muted">Project Manager</small>
+                                </div>
+                                <span class="badge bg-success">En línea</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Área de Chat -->
+                <div class="col-lg-8">
+                    <div class="card slide-in-left" style="animation-delay: 0.2s;">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center">
+                                <div class="chat-avatar" style="width: 45px; height: 45px;">GE</div>
+                                <div class="ms-3">
+                                    <h5 class="card-title mb-0">Equipo General</h5>
+                                    <small class="text-muted">
+                                        <i class="fas fa-users me-1"></i>
+                                        8 miembros • 5 en línea
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-video"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="chat-container">
+                                <div class="chat-messages">
+                                    <!-- Fecha -->
+                                    <div class="text-center my-4">
+                                        <span class="badge bg-light text-muted">Hoy</span>
+                                    </div>
+                                    
+                                    <!-- Mensaje 1 -->
+                                    <div class="chat-message">
+                                        <div class="chat-avatar" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">MG</div>
+                                        <div class="chat-content">
+                                            <div class="chat-header">
+                                                <span class="chat-name">María García</span>
+                                                <span class="chat-time">09:15 AM</span>
+                                            </div>
+                                            <div class="chat-bubble">
+                                                Buenos días equipo! 👋 Les comparto los mockups actualizados del proyecto E-commerce. Ya están listos para revisión.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Mensaje 2 -->
+                                    <div class="chat-message">
+                                        <div class="chat-avatar">JD</div>
+                                        <div class="chat-content">
+                                            <div class="chat-header">
+                                                <span class="chat-name">Juan Díaz</span>
+                                                <span class="chat-time">09:22 AM</span>
+                                            </div>
+                                            <div class="chat-bubble">
+                                                Excelente María! 🎨 Los revisaré enseguida. ¿Ya los subiste a Figma?
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Mensaje 3 -->
+                                    <div class="chat-message">
+                                        <div class="chat-avatar" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">MG</div>
+                                        <div class="chat-content">
+                                            <div class="chat-header">
+                                                <span class="chat-name">María García</span>
+                                                <span class="chat-time">09:25 AM</span>
+                                            </div>
+                                            <div class="chat-bubble">
+                                                Sí, ya están en el proyecto de Figma. También dejé algunos comentarios sobre las interacciones. 💡
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Mensaje 4 -->
+                                    <div class="chat-message">
+                                        <div class="chat-avatar" style="background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);">AR</div>
+                                        <div class="chat-content">
+                                            <div class="chat-header">
+                                                <span class="chat-name">Ana Rodríguez</span>
+                                                <span class="chat-time">09:45 AM</span>
+                                            </div>
+                                            <div class="chat-bubble">
+                                                Perfecto, gracias María! Voy a revisarlos con el cliente esta tarde. ¿Carlos, cómo va lo de la migración de la base de datos?
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Mensaje 5 -->
+                                    <div class="chat-message">
+                                        <div class="chat-avatar" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);">CL</div>
+                                        <div class="chat-content">
+                                            <div class="chat-header">
+                                                <span class="chat-name">Carlos López</span>
+                                                <span class="chat-time">10:00 AM</span>
+                                            </div>
+                                            <div class="chat-bubble">
+                                                Va avanzando bien! Ya completé el 30% de la migración. Estimó terminar para el viernes. 🚀
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Mensaje 6 -->
+                                    <div class="chat-message own">
+                                        <div class="chat-avatar">JD</div>
+                                        <div class="chat-content">
+                                            <div class="chat-header">
+                                                <span class="chat-name">Juan Díaz</span>
+                                                <span class="chat-time">10:05 AM</span>
+                                            </div>
+                                            <div class="chat-bubble">
+                                                Genial Carlos! 💪 Cuando termines avísame para hacer las pruebas de integración.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Mensaje 7 -->
+                                    <div class="chat-message">
+                                        <div class="chat-avatar" style="background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);">LM</div>
+                                        <div class="chat-content">
+                                            <div class="chat-header">
+                                                <span class="chat-name">Laura Martínez</span>
+                                                <span class="chat-time">10:30 AM</span>
+                                            </div>
+                                            <div class="chat-bubble">
+                                                Equipo, les recuerdo que mañana tenemos la reunión de sprint planning a las 10:00 AM. Por favor, revisen sus tareas pendientes antes de la reunión. 📅
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Mensaje 8 -->
+                                    <div class="chat-message">
+                                        <div class="chat-avatar" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">MG</div>
+                                        <div class="chat-content">
+                                            <div class="chat-header">
+                                                <span class="chat-name">María García</span>
+                                                <span class="chat-time">10:32 AM</span>
+                                            </div>
+                                            <div class="chat-bubble">
+                                                Perfecto, gracias por la actualización Laura! 👍
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Input de mensaje -->
+                                <div class="chat-input-area">
+                                    <button class="btn btn-outline-secondary">
+                                        <i class="fas fa-paperclip"></i>
+                                    </button>
+                                    <input type="text" class="chat-input" placeholder="Escribe un mensaje...">
+                                    <button class="btn btn-outline-secondary">
+                                        <i class="fas fa-smile"></i>
+                                    </button>
+                                    <button class="btn btn-primary">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Toggle Sidebar en móvil
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinPlanner - Cargando...</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Pantalla de Carga -->
+    <div class="loading-screen">
+        <div class="loading-logo">
+            <i class="fas fa-project-diagram"></i>
+        </div>
+        <h1 class="loading-text">WinPlanner - Cargando sistema...</h1>
+        <div class="loading-spinner"></div>
+        <div class="loading-bar">
+            <div class="loading-bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script de redirección -->
+    <script>
+        // Redirigir al dashboard después de 3 segundos
+        setTimeout(function() {
+            window.location.href = 'dashboard.html';
+        }, 3000);
+    </script>
+</body>
+</html>

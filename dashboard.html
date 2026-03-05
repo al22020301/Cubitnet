@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinPlanner - Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-project-diagram"></i>
+            </div>
+            <h4 class="sidebar-brand">WinPlanner</h4>
+        </div>
+        
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="sidebar-item active">
+                <i class="fas fa-th-large"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="gestion_proyectos.html" class="sidebar-item">
+                <i class="fas fa-folder-open"></i>
+                <span>Gestión de Proyectos</span>
+            </a>
+            <a href="planeacion_control.html" class="sidebar-item">
+                <i class="fas fa-tasks"></i>
+                <span>Planeación y Control</span>
+            </a>
+            <a href="colaboracion.html" class="sidebar-item">
+                <i class="fas fa-comments"></i>
+                <span>Colaboración</span>
+            </a>
+            <a href="ia_analitica.html" class="sidebar-item">
+                <i class="fas fa-brain"></i>
+                <span>IA y Analítica</span>
+            </a>
+            
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-section-title">Configuración</div>
+            
+            <a href="#" class="sidebar-item">
+                <i class="fas fa-cog"></i>
+                <span>Ajustes</span>
+            </a>
+            <a href="#" class="sidebar-item">
+                <i class="fas fa-user-circle"></i>
+                <span>Perfil</span>
+            </a>
+            <a href="index.html" class="sidebar-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div>
+                <h2 class="page-title">Dashboard</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        
+        <div class="topbar-right">
+            <div class="topbar-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="topbar-icon">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">5</span>
+            </div>
+            <div class="topbar-icon">
+                <i class="fas fa-envelope"></i>
+                <span class="notification-badge">3</span>
+            </div>
+            <div class="user-profile">
+                <div class="user-avatar">JD</div>
+                <div class="user-info">
+                    <p class="user-name">Juan Díaz</p>
+                    <p class="user-role">Administrador</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        <div class="container-fluid">
+            <!-- Tarjetas de Métricas -->
+            <div class="row g-4 mb-4">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card fade-in">
+                        <div class="card-body">
+                            <div class="metric-card">
+                                <div class="metric-icon blue">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <h3 class="metric-value">24</h3>
+                                    <p class="metric-label">Proyectos Activos</p>
+                                    <span class="metric-change positive">
+                                        <i class="fas fa-arrow-up"></i> 12% este mes
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-md-6">
+                    <div class="card fade-in" style="animation-delay: 0.1s;">
+                        <div class="card-body">
+                            <div class="metric-card">
+                                <div class="metric-icon green">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <h3 class="metric-value">156</h3>
+                                    <p class="metric-label">Proyectos Completados</p>
+                                    <span class="metric-change positive">
+                                        <i class="fas fa-arrow-up"></i> 8% este mes
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-md-6">
+                    <div class="card fade-in" style="animation-delay: 0.2s;">
+                        <div class="card-body">
+                            <div class="metric-card">
+                                <div class="metric-icon red">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <h3 class="metric-value">5</h3>
+                                    <p class="metric-label">Proyectos en Riesgo</p>
+                                    <span class="metric-change negative">
+                                        <i class="fas fa-arrow-up"></i> 2 más que ayer
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-md-6">
+                    <div class="card fade-in" style="animation-delay: 0.3s;">
+                        <div class="card-body">
+                            <div class="metric-card">
+                                <div class="metric-icon purple">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <h3 class="metric-value">12</h3>
+                                    <p class="metric-label">Equipos de Trabajo</p>
+                                    <span class="metric-change positive">
+                                        <i class="fas fa-plus"></i> 1 nuevo equipo
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráficas y Contenido -->
+            <div class="row g-4">
+                <!-- Gráfica de Progreso -->
+                <div class="col-lg-8">
+                    <div class="card slide-in-left">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-chart-line text-primary me-2"></i>
+                                Progreso de Proyectos
+                            </h5>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                    Este Año
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Este Mes</a></li>
+                                    <li><a class="dropdown-item" href="#">Este Trimestre</a></li>
+                                    <li><a class="dropdown-item" href="#">Este Año</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="progressChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyectos Recientes -->
+                <div class="col-lg-4">
+                    <div class="card slide-in-left" style="animation-delay: 0.1s;">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-clock text-primary me-2"></i>
+                                Proyectos Recientes
+                            </h5>
+                            <a href="gestion_proyectos.html" class="btn btn-sm btn-outline-primary">Ver Todos</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3 p-3 bg-light rounded">
+                                <div class="flex-shrink-0">
+                                    <div class="metric-icon blue" style="width: 45px; height: 45px;">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">Desarrollo Web E-commerce</h6>
+                                    <small class="text-muted">Progreso: 75%</small>
+                                    <div class="progress mt-1" style="height: 6px;">
+                                        <div class="progress-bar bg-primary" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center mb-3 p-3 bg-light rounded">
+                                <div class="flex-shrink-0">
+                                    <div class="metric-icon green" style="width: 45px; height: 45px;">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">App Móvil de Delivery</h6>
+                                    <small class="text-muted">Progreso: 45%</small>
+                                    <div class="progress mt-1" style="height: 6px;">
+                                        <div class="progress-bar bg-success" style="width: 45%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center mb-3 p-3 bg-light rounded">
+                                <div class="flex-shrink-0">
+                                    <div class="metric-icon orange" style="width: 45px; height: 45px;">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">Migración de Base de Datos</h6>
+                                    <small class="text-muted">Progreso: 30%</small>
+                                    <div class="progress mt-1" style="height: 6px;">
+                                        <div class="progress-bar bg-warning" style="width: 30%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center p-3 bg-light rounded">
+                                <div class="flex-shrink-0">
+                                    <div class="metric-icon purple" style="width: 45px; height: 45px;">
+                                        <i class="fas fa-cloud"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">Implementación Cloud AWS</h6>
+                                    <small class="text-muted">Progreso: 90%</small>
+                                    <div class="progress mt-1" style="height: 6px;">
+                                        <div class="progress-bar" style="width: 90%; background-color: #8B5CF6;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Segunda fila de gráficas -->
+            <div class="row g-4 mt-2">
+                <!-- Distribución por Estado -->
+                <div class="col-lg-6">
+                    <div class="card slide-in-left" style="animation-delay: 0.2s;">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-chart-pie text-primary me-2"></i>
+                                Distribución por Estado
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="statusChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actividad del Equipo -->
+                <div class="col-lg-6">
+                    <div class="card slide-in-left" style="animation-delay: 0.3s;">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-users text-primary me-2"></i>
+                                Actividad del Equipo
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="teamChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts del Dashboard -->
+    <script>
+        // Toggle Sidebar en móvil
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('show');
+        });
+
+        // Gráfica de Progreso de Proyectos
+        const progressCtx = document.getElementById('progressChart').getContext('2d');
+        new Chart(progressCtx, {
+            type: 'line',
+            data: {
+                labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                datasets: [{
+                    label: 'Proyectos Completados',
+                    data: [8, 12, 15, 10, 18, 22, 20, 25, 28, 30, 35, 40],
+                    borderColor: '#2563EB',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#2563EB',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }, {
+                    label: 'Proyectos Iniciados',
+                    data: [10, 14, 12, 16, 20, 18, 24, 22, 26, 28, 32, 38],
+                    borderColor: '#10B981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#10B981',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 20,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // Gráfica de Distribución por Estado
+        const statusCtx = document.getElementById('statusChart').getContext('2d');
+        new Chart(statusCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Activos', 'Completados', 'En Riesgo', 'Pausados'],
+                datasets: [{
+                    data: [24, 156, 5, 3],
+                    backgroundColor: [
+                        '#2563EB',
+                        '#10B981',
+                        '#EF4444',
+                        '#F59E0B'
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 20,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    }
+                },
+                cutout: '65%'
+            }
+        });
+
+        // Gráfica de Actividad del Equipo
+        const teamCtx = document.getElementById('teamChart').getContext('2d');
+        new Chart(teamCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Desarrollo', 'Diseño', 'Marketing', 'QA', 'DevOps', 'Soporte'],
+                datasets: [{
+                    label: 'Tareas Completadas',
+                    data: [145, 89, 67, 112, 78, 95],
+                    backgroundColor: [
+                        'rgba(37, 99, 235, 0.8)',
+                        'rgba(16, 185, 129, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(139, 92, 246, 0.8)',
+                        'rgba(6, 182, 212, 0.8)',
+                        'rgba(236, 72, 153, 0.8)'
+                    ],
+                    borderRadius: 8,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
